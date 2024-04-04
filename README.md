@@ -1,0 +1,1 @@
+# moldev-kubernetes-manifest

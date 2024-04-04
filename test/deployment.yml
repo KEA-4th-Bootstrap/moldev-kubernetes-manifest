@@ -19,6 +19,8 @@ spec:
         imagePullPolicy: Always # 컨테이너를 올리는 정책 정의 always 항상 컨테이너가 도커 이미지와 비교했을 때 최신 버전이도록 유지
         ports:
         - containerPort: 8080
+      nodeSelector:     # 이 부분을 추가
+        name: ubuntu
   # 이 부분에서 카나리로 지정
   strategy:
     canary:

@@ -3,7 +3,7 @@ kind: Deplyment # Rollout으로 생성
 metadata:
   name: test-canary-rollout # 서비스를 명시하는 이름 맘대로 가능
 spec:
-  replicas: 4
+  replicas: 3
   revisionHistoryLimit: 2
   selector: # 기존에 있는 pod들의 집합을 찾는 명령
     matchLabels:

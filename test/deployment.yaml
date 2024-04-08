@@ -5,7 +5,7 @@ kind: Rollout  # Rollout 리소스로 변경
 metadata:
   name: test-canary-rollout
 spec:
-  replicas: 3
+  replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:

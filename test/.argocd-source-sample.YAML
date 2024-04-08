@@ -1,3 +1,0 @@
-kustomize:
-  images:
-  - ghcr.io/kmaster8/sample:1.2

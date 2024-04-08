@@ -1,5 +1,7 @@
-apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
-kind: Rollout  # Rollout 리소스로 변경
+# apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
+# kind: Rollout  # Rollout 리소스로 변경
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: test-canary-rollout
 spec:
@@ -21,10 +23,10 @@ spec:
         - containerPort: 8080
       nodeSelector:
         kubernetes.io/hostname: ubuntu  # 일반적으로 사용되는 레이블 키로 수정
-  strategy:
-    canary:
-      maxSurge: "25%"
-      maxUnavailable: 0
-      steps:
-      - setWeight: 25
-      - pause: {}
+  # strategy:
+  #   canary:
+  #     maxSurge: "25%"
+  #     maxUnavailable: 0
+  #     steps:
+  #     - setWeight: 25
+  #     - pause: {}

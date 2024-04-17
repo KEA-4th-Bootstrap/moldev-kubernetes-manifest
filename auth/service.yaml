@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: post-service  # 이상한 문자 제거
+  name: auth-service  # 이상한 문자 제거
 spec:
   selector:
-    app: post-canary
+    app: auth-canary
   ports:
   - protocol: TCP
     port: 80

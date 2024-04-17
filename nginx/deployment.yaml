@@ -17,7 +17,7 @@ spec:
         image: ziiyouth/bootstrap-nginx:3
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
   strategy:
     canary:
       maxSurge: "25%"

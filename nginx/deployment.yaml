@@ -13,15 +13,15 @@ spec:
         app: nginx-canary
     spec:
       containers:
-        - name: nginx-canary
-          image: ziiyouth/bootstrap-nginx:3
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 8080
-      strategy:
-        canary:
-          maxSurge: "25%"
-          maxUnavailable: 0
-          steps:
-            - setWeight: 25
-            - pause: {}
+      - name: nginx-canary
+        image: ziiyouth/bootstrap-nginx:3
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+  strategy:
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 25
+      - pause: {}

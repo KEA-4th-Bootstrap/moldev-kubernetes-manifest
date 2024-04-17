@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx-canary
-        image: ziiyouth/bootstrap-nginx:5
+        image: ziiyouth/bootstrap-nginx:9
         imagePullPolicy: Always
         ports:
         - containerPort: 80

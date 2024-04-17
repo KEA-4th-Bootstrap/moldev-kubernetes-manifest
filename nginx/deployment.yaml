@@ -16,6 +16,9 @@ spec:
       containers:
         - name: nginx-canary
           image: ziiyouth/bootstrap-nginx:3
+          imagePullPolicy: Always
+          ports:
+          - containerPort: 80
       strategy:
         canary:
           maxSurge: "25%"

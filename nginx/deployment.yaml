@@ -1,29 +1,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
-  name: nginx-nfs-rollout
+  name: nginx-canary-rollout
 spec:
   replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: nginx-nfs
+      app: nginx-canary
   template:
     metadata:
       labels:
-        app: nginx-nfs
+        app: nginx-canary
     spec:
       containers:
-        - name: nginx-nfs
-          image: mcr.microsoft.com/oss/nginx/nginx:1.19.5
-          command:
-            - "/bin/bash"
-            - "-c"
-            - set -euo pipefail; while true; do echo $(date) >> /mnt/nfs/outfile; sleep 1; done
-          volumeMounts:
-            - name: persistent-storage
-              mountPath: "/mnt/nfs"
-              readOnly: false
+        - name: nginx-canary
+          image: ziiyouth/bootstrap-nginx:0
       strategy:
         canary:
           maxSurge: "25%"
@@ -31,7 +23,3 @@ spec:
           steps:
             - setWeight: 25
             - pause: {}
-      volumes:
-        - name: persistent-storage
-          persistentVolumeClaim:
-            claimName: pvc-nfs-dynamic

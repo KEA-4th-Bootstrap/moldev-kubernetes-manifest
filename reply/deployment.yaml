@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
+kind: Rollout  # Rollout 리소스로 변경
+metadata:
+  name: reply-canary-rollout
+spec:
+  replicas: 2
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: reply-canary
+  template:
+    metadata:
+      labels:
+        app: reply-canary
+    spec:
+      containers:
+      - name: canary-rollouts-reply
+        image: ziiyouth/bootstrap-reply:0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      nodeSelector:
+        kubernetes.io/hostname: wkreply  # 일반적으로 사용되는 레이블 키로 수정
+  strategy:
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 25
+      - pause: {}

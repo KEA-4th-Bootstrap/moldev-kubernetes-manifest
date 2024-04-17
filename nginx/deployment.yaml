@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: nginx-nfs-rollout
+spec:
+  replicas: 2
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: nginx-nfs
+  template:
+    metadata:
+      labels:
+        app: nginx-nfs
+    spec:
+      containers:
+        - name: nginx-nfs
+          image: mcr.microsoft.com/oss/nginx/nginx:1.19.5
+          command:
+            - "/bin/bash"
+            - "-c"
+            - set -euo pipefail; while true; do echo $(date) >> /mnt/nfs/outfile; sleep 1; done
+          volumeMounts:
+            - name: persistent-storage
+              mountPath: "/mnt/nfs"
+              readOnly: false
+      strategy:
+        canary:
+          maxSurge: "25%"
+          maxUnavailable: 0
+          steps:
+            - setWeight: 25
+            - pause: {}
+      volumes:
+        - name: persistent-storage
+          persistentVolumeClaim:
+            claimName: pvc-nfs-dynamic

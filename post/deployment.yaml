@@ -19,8 +19,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-      nodeSelector:
-        kubernetes.io/hostname: wkpost  # 일반적으로 사용되는 레이블 키로 수정
   strategy:
     canary:
       maxSurge: "25%"

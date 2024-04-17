@@ -1,21 +1,21 @@
 apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
 kind: Rollout  # Rollout 리소스로 변경
 metadata:
-  name: post-canary-rollout
+  name: auth-canary-rollout
 spec:
   replicas: 2
   revisionHistoryLimit: 2
   selector:
     matchLabels:
-      app: post-canary
+      app: auth-canary
   template:
     metadata:
       labels:
-        app: post-canary
+        app: auth-canary
     spec:
       containers:
-      - name: canary-rollouts-post
-        image: ziiyouth/bootstrap-post:44
+      - name: canary-rollouts-auth
+        image: ziiyouth/bootstrap-auth:0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
+kind: Rollout  # Rollout 리소스로 변경
+metadata:
+  name: chatbot-canary-rollout
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: chatbot-canary
+  template:
+    metadata:
+      labels:
+        app: chatbot-canary
+    spec:
+      containers:
+      - name: canary-rollouts-chatbot
+        image: ziiyouth/bootstrap-chatbot:0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+  strategy:
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 25
+      - pause: {}

@@ -1,1 +1,27 @@
-
+apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
+kind: Rollout  # Rollout 리소스로 변경
+metadata:
+  name: frontend-canary-rollout
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend-canary
+  template:
+    metadata:
+      labels:
+        app: frontend-canary
+    spec:
+      containers:
+      - name: canary-rollouts-frontend
+        image: ziiyouth/bootstrap-frontend:0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3000
+  strategy:
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 25
+      - pause: {}

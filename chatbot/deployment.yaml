@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-chatbot
-        image: ziiyouth/bootstrap-chatbot:10
+        image: ziiyouth/bootstrap-chatbot:11
         imagePullPolicy: Always
         ports:
         - containerPort: 8000

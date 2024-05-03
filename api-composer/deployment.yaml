@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: api-composer-rollout
+spec:
+  replicas: 2
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: api-composer
+  template:
+    metadata:
+      labels:
+        app: api-composer
+    spec:
+      containers:
+      - name: canary-rollouts-api-composer
+        image: ziiyouth/bootstrap-api-composer:0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: SERVER_URL
+          value: "https://90e823404e1c4d70ba82758cfe840b6a.apm.us-west-2.aws.cloud.es.io:443"
+        - name: SECRET_TOKEN
+          value: "jHoNA34J0g2jUcKhwz"
+  strategy:
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 25
+      - pause: {}

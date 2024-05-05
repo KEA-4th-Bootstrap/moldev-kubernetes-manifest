@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-frontend
-        image: ziiyouth/bootstrap-frontend:20
+        image: ziiyouth/bootstrap-frontend:21
         imagePullPolicy: Always
         ports:
         - containerPort: 3000

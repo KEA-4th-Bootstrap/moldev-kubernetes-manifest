@@ -21,9 +21,9 @@ spec:
         - containerPort: 8080
         env:
         - name: SERVER_URL
-          value: "https://90e823404e1c4d70ba82758cfe840b6a.apm.us-west-2.aws.cloud.es.io:443"
+          value: ""
         - name: SECRET_TOKEN
-          value: "jHoNA34J0g2jUcKhwz"
+          value: ""
   strategy:
     canary:
       maxSurge: "25%"

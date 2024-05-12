@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-auth
-        image: ziiyouth/bootstrap-auth:42
+        image: ziiyouth/bootstrap-auth:43
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

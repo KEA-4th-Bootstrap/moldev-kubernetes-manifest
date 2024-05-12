@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-search
-        image: ziiyouth/bootstrap-search:10
+        image: ziiyouth/bootstrap-search:11
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

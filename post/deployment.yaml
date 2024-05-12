@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-post
-        image: ziiyouth/bootstrap-post:56
+        image: ziiyouth/bootstrap-post:57
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

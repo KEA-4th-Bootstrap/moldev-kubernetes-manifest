@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-reply
-        image: ziiyouth/bootstrap-reply:19
+        image: ziiyouth/bootstrap-reply:20
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

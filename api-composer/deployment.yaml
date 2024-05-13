@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-api-composer
-        image: ziiyouth/bootstrap-api-composer:18
+        image: ziiyouth/bootstrap-api-composer:19
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

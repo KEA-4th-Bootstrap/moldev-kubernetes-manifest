@@ -24,6 +24,8 @@ spec:
           value: ""
         - name: SECRET_TOKEN
           value: ""
+      imagePullSecrets:
+        - name: kc-backend-cr
   strategy:
     canary:
       maxSurge: "25%"

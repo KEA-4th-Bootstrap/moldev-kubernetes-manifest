@@ -1,5 +1,5 @@
-apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
-kind: Rollout  # Rollout 리소스로 변경
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: signaling-canary-rollout
 spec:
@@ -18,6 +18,11 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 3000
+        env:
+        - name: SERVER_URL
+          value: ""
+        - name: SECRET_TOKEN
+          value: ""
       imagePullSecrets:
         - name: kc-backend-cr
   strategy:

@@ -15,10 +15,18 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-auth
-        image: ziiyouth/bootstrap-member:23
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-member:0
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        env:
+        - name: SERVER_URL
+          value: ""
+        - name: SECRET_TOKEN
+          value: ""
+      imagePullSecrets:
+        - name: kc-backend-cr
+        
   strategy:
     canary:
       maxSurge: "25%"

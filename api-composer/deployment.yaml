@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-api-composer
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-api-composer:48
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-api-composer:49
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-chatbot
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-chatbot:28
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-chatbot:29
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

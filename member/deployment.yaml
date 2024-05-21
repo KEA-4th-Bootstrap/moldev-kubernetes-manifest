@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-auth
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-member:50
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-member:51
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: recommend-service  # 이상한 문자 제거
+spec:
+  selector:
+    app: recommend-canary
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: ClusterIP
+  clusterIP: None

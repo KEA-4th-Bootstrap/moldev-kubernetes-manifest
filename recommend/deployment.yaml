@@ -1,0 +1,35 @@
+apiVersion: argoproj.io/v1alpha1  # Rollouts를 사용하기 위한 API 버전
+kind: Rollout  # Rollout 리소스로 변경
+metadata:
+  name: recommend-canary-rollout
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: recommend-canary
+  template:
+    metadata:
+      labels:
+        app: recommend-canary
+    spec:
+      containers:
+      - name: canary-rollouts-charecommendtbot
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-recommend:0
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+      imagePullSecrets:
+        - name: kc-backend-cr
+        
+  strategy:
+    canary:
+      maxSurge: "25%"
+      maxUnavailable: 0
+      steps:
+      - setWeight: 25
+      - pause: {}
+      - setWeight: 50
+      - pause: {}
+      - setWeight: 75
+      - pause: {}
+      - setWeight: 100

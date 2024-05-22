@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-post
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-post:94
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-post:95
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

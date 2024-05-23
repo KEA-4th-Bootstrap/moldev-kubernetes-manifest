@@ -21,6 +21,6 @@ spec:
     targetPort: 8080
   - name: stun-turn
     protocol: UDP
-    port: 3478
+    port: 53
     targetPort: 8080
   type: LoadBalancer

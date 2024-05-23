@@ -13,5 +13,5 @@ spec:
   - protocol: UDP
     port: 12345
     targetPort: 12345
-    nodePort: 30011
+    nodePort: 30033
   type: NodePort

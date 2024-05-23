@@ -17,7 +17,7 @@ spec:
         image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-signaling:36
         imagePullPolicy: Always
         ports:
-        - containerPort: 3000
+        - containerPort: 8080
         env:
         - name: SERVER_URL
           value: ""

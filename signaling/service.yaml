@@ -6,12 +6,14 @@ spec:
   selector:
     app: signaling-canary
   ports:
-  - protocol: TCP
+  - name: http
+    protocol: TCP
     port: 80
     targetPort: 8080
     nodePort: 30010
-  - protocol: UDP
+  - name: stun-turn
+    protocol: UDP
     port: 3478
     targetPort: 3478
-    nodePort: 30110
+    nodePort: 30111
   type: NodePort

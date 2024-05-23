@@ -15,5 +15,5 @@ spec:
     protocol: UDP
     port: 3478
     targetPort: 8080
-    nodePort: 3478
+    nodePort: 30010
   type: NodePort

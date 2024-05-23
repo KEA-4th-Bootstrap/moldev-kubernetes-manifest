@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: signaling-service  # 이상한 문자 제거
+  name: signaling-service
 spec:
   selector:
     app: signaling-canary
@@ -10,4 +10,8 @@ spec:
     port: 80
     targetPort: 8080
     nodePort: 30010
+  - protocol: UDP
+    port: 12345
+    targetPort: 12345
+    nodePort: 30011
   type: NodePort

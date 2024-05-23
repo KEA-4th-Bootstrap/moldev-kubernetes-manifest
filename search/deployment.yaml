@@ -24,13 +24,6 @@ spec:
           value: ""
         - name: SECRET_TOKEN
           value: ""
-        volumeMounts:
-        - name: log-volume
-          mountPath: /logs
-      volumes:
-      - name: log-volume
-        persistentVolumeClaim:
-          claimName: log-pvc
       imagePullSecrets:
         - name: kc-backend-cr
         

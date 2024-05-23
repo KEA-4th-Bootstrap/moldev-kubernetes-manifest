@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   annotations:
-    loadbalancer.ke.kakaocloud.com/load-balancer-type: "ALB"
+    loadbalancer.ke.kakaocloud.com/load-balancer-type: "NLB"
     service.beta.kubernetes.io/openstack-internal-load-balancer: "false"
     loadbalancer.openstack.org/default-tls-container-ref: "https://key-manager.kr-central-2.kakaoi.io/v1/secrets/137281bf-88cd-4fca-9d16-8aaa37797af9"
   name: signaling-service

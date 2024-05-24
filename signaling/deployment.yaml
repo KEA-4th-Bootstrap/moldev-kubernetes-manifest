@@ -18,7 +18,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
-          protocol: UDP
         env:
         - name: SERVER_URL
           value: ""

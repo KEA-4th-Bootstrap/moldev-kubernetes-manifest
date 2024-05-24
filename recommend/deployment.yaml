@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-charecommendtbot
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-recommend:2
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-recommend:3
         imagePullPolicy: Always
         ports:
         - containerPort: 8000

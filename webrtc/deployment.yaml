@@ -3,7 +3,7 @@ kind: Rollout  # Rollout 리소스로 변경
 metadata:
   name: webrtc-canary-rollout
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: webrtc-canary

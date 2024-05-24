@@ -8,7 +8,6 @@ metadata:
   name: signaling-service
   namespace: backend
 spec:
-  externalTrafficPolicy: Local
   selector:
     app: signaling-canary
   ports:

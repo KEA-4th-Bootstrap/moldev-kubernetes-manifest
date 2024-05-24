@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-search
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-search:36
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-search:37
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

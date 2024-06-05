@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-frontend
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-client:21
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-client:22
         imagePullPolicy: Always
         ports:
         - containerPort: 80

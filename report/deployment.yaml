@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-report
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-report:13
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-report:14
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: canary-rollouts-signaling
-        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-signaling:54
+        image: gcu-bootstrap-dev.kr-central-2.kcr.dev/moldev-repository/bootstrap-signaling:55
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
